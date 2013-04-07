@@ -8,11 +8,7 @@ module Figaro
       end
 
       def vars
-        Figaro.vars(environment)
-      end
-
-      def environment
-        heroku("run 'echo $RAILS_ENV'").chomp[/(\w+)\z/]
+        Figaro.vars(app)
       end
 
       def heroku(command)
